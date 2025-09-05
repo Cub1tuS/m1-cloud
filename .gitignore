@@ -4,3 +4,7 @@ tp/terraform/.terraform/providers/registry.terraform.io/hashicorp/azurerm/4.43.0
 tp/terraform/.terraform.lock.hcl
 tp/terraform/.DS_Store
 .DS_Store
+tp/terraform/terraform.tfstate.backup
+tp/terraform/terraform.tfstate
+tp/terraform/terraform.tfstate
+tp/terraform/terraform.tfstate

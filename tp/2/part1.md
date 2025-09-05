@@ -14,25 +14,20 @@ En configurant ce *NSG*, on pourra alors faire du filtrage réseau, comme par ex
 
 ## 2. Ajouter un NSG au déploiement
 
-???+ danger
-
-    Si vous faites le TP à l'école, on parle donc de l'IP publique du routeur de l'école.  
-    Si c'est chez vous, ce sera celle de votre box.  
-    **Il serait bien avisé de masquer cette IP dans le compte-rendu de TP public que vous me remettez.**  
-
 🌞 **[Ajouter un NSG à votre déploiement Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group)**
 
-- le trafic qui arrive sur l'interface réseau de la VM qui porte l'IP publique doit être filtré :
+[Ajout du fichier network](../terraform/network.tf)
 
-    - n'autorise les connexions que sur le port 22 (pour SSH)
-    - n'autorise les connexions que depuis votre IP publique
+```
+dorian@Air-de-Dorian terraform % ssh dorian@4.180.66.125
+The authenticity of host '4.180.66.125 (4.180.66.125)' can't be established.
+ED25519 key fingerprint is SHA256:wKaKnE+52k/CMOf347Cr5GXJmP2nCYotk9FYTT0QKJ4.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '4.180.66.125' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1089-azure x86_64)
+```
 
-- je vous recommande de créer un nouveau fichier `network.tf` à côté de votre `main.tf` et y mettre cette conf
-
-???+ note
-
-    Aucun include nécessaire ou quoi.  
-    Si le fichier se termine par `.tf`, il sera lu par vos commandes `terraform`.
 
 ## 3. Proofs !
 
