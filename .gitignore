@@ -1,0 +1,6 @@
+*.tfvars
+tp/terraform/.terraform/providers/registry.terraform.io/hashicorp/azurerm/4.43.0/darwin_arm64/terraform-provider-azurerm_v4.43.0_x5
+tp/terraform/.terraform/providers/registry.terraform.io/hashicorp/azurerm/4.43.0/darwin_arm64/LICENSE.txt
+tp/terraform/.terraform.lock.hcl
+tp/terraform/.DS_Store
+.DS_Store
