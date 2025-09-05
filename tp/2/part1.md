@@ -18,6 +18,40 @@ En configurant ce *NSG*, on pourra alors faire du filtrage réseau, comme par ex
 
 [Ajout du fichier network](../terraform/network.tf)
 
+## 3. Proofs !
+
+🌞 **Prouver que ça fonctionne, rendu attendu :**
+
+```
+# azurerm_network_security_group.main will be created
+  + resource "azurerm_network_security_group" "main" {
+      + id                  = (known after apply)
+      + location            = "westeurope"
+      + name                = "acceptanceTestSecurityGroup1"
+      + resource_group_name = "tf-cloud-tp1"
+      + security_rule       = [
+          + {
+              + access                                     = "Allow"
+              + destination_address_prefix                 = "*"
+              + destination_address_prefixes               = []
+              + destination_application_security_group_ids = []
+              + destination_port_range                     = "22"
+              + destination_port_ranges                    = []
+              + direction                                  = "Inbound"
+              + name                                       = "test123"
+              + priority                                   = 100
+              + protocol                                   = "Tcp"
+              + source_address_prefix                      = "104.28.30.16"
+              + source_address_prefixes                    = []
+              + source_application_security_group_ids      = []
+              + source_port_range                          = "*"
+              + source_port_ranges                         = []
+                # (1 unchanged attribute hidden)
+            },
+        ]
+    }
+```
+
 ```
 dorian@Air-de-Dorian terraform % ssh dorian@4.180.66.125
 The authenticity of host '4.180.66.125 (4.180.66.125)' can't be established.
@@ -27,16 +61,6 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '4.180.66.125' (ED25519) to the list of known hosts.
 Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1089-azure x86_64)
 ```
-
-
-## 3. Proofs !
-
-🌞 **Prouver que ça fonctionne, rendu attendu :**
-
-- la sortie du `terraform apply` (ce qu'affiche votre `output.tf`)
-- une commande `az` pour obtenir toutes les infos liées à la VM
-
-    - on doit y voir le *NSG*
 
 - une commande `ssh` fonctionnelle 
 
