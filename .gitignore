@@ -6,5 +6,3 @@ tp/terraform/.DS_Store
 .DS_Store
 tp/terraform/terraform.tfstate.backup
 tp/terraform/terraform.tfstate
-tp/terraform/terraform.tfstate
-tp/terraform/terraform.tfstate
