@@ -20,8 +20,3 @@ resource "azurerm_network_interface" "main" {
     public_ip_address_id          = azurerm_public_ip.main.id
   }
 }
-
-output "vm_public_fqdn" {
-  value = azurerm_public_ip.main.fqdn
-  description = "FQDN de la VM pour connexion SSH"
-}

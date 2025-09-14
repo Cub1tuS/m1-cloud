@@ -11,7 +11,7 @@ resource "azurerm_network_security_group" "main" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
-    source_address_prefix      = "172.226.148.60"
+    source_address_prefix      = "176.136.90.169"
     destination_address_prefix = "*"
   }
 }
