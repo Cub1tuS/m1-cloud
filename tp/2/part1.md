@@ -22,6 +22,8 @@ En configurant ce *NSG*, on pourra alors faire du filtrage réseau, comme par ex
 
 🌞 **Prouver que ça fonctionne, rendu attendu :**
 
+- la sortie du `terraform apply`
+
 ```
 Terraform will perform the following actions:
 
@@ -195,6 +197,8 @@ Terraform will perform the following actions:
     }
 ```
 
+- une commande `az` pour obtenir toutes les infos liées à la VM
+
 ```
 dorian@Air-de-Dorian terraform % az vm show --name "super-vm" --resource-group "tf-cloud-tp1" --output json
 {
@@ -334,6 +338,9 @@ dorian@Air-de-Dorian terraform % az network nic show \
 }
 ```
 
+- une commande `ssh` fonctionnelle 
+
+
 ```
 dorian@Air-de-Dorian terraform % ssh dorian@4.180.66.125
 The authenticity of host '4.180.66.125 (4.180.66.125)' can't be established.
@@ -343,6 +350,9 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '4.180.66.125' (ED25519) to the list of known hosts.
 Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1089-azure x86_64)
 ```
+
+- changement de port :
+
 
 ```
 ● ssh.service - OpenBSD Secure Shell server
