@@ -233,3 +233,5 @@ dorian@super-vm:~$
 - `outputs.tf`
 - `main.tf`
 - tout autre fichier Terraform utilisé
+
+[Partie 3](part3.md)

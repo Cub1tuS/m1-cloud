@@ -385,3 +385,5 @@ ssh: connect to host 51.144.244.188 port 22: Connection refused
 - `main.tf`
 - `network.tf`
 - tout autre fichier Terraform utilisé
+
+[Partie 2](./part2.md)
