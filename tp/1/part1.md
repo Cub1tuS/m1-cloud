@@ -16,14 +16,6 @@
 
 - [suivez la doc officielle](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
-![Terraform](../../assets/img/logo_terraform.png)
-
-???+ note
-
-    **Pour les Windowsiens**
-    Faites vot' tambouille j'veux pas le savoir
-    Powershell natif, ou WLS, ou une VM, i don't know vous êtes grands 🐈
-
 ## 2. Une paire de clés SSH
 
 On parle dans cette section uniquement de **votre paire de clés** à générer **depuis votre poste**, pour sécuriser vos connexions SSH
@@ -48,9 +40,11 @@ ON VA BOSSER CORRECTEMENT QUOI 🌻
 - elle doit se situer dans le dossier standard pour votre utilisateur
 - elle doit utiliser l'algorithme que vous avez choisi à l'étape précédente (donc, pas de RSA)
 - elle est protégée par un mot de passe de votre choix
+
 ```
 ssh-keygen -t ed25519 -f ~/.ssh/cloud_tp1 -C "cloud_tp1" -N "***"
 ```
+
 ### C. Agent SSH
 
 Afin de ne pas systématiquement saisir le mot de passe d'une clé à chaque fois qu'on l'utilise, **parce que c'est très très chiant**, on peut utiliser un **Agent SSH**.
@@ -59,14 +53,10 @@ Un programme qui tourne en fond, auquel on ajoute nos clés SSH, qui peuvent ens
 
 L'avantage est qu'on ne saisit le password qu'au moment de l'ajout de la clé SSH à l'agent !
 
-???+ info
-
-    Oh et y'a moyen de le faire sous tous les OS. Comme d'hab, sous Linux/MacOS, moins relou :d  
-    Peu importe l'OS, ça finira par taper un ptit `ssh-add` pour ajouter votre clé à l'agent normalement !
-
 🌞 **Configurer un agent SSH sur votre poste**
 
 - détaillez-moi toute la conf ici que vous aurez fait
+
 ```
 dorian@Air-de-Dorian m1-cloud-az % ssh-add ~/.ssh/cloud_tp1
 Enter passphrase for /Users/dorian/.ssh/cloud_tp1: 

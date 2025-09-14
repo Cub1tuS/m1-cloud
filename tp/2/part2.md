@@ -7,6 +7,7 @@ Waddabout donner un ptit nom DNS à notre VM ?
 🌞 **Donner un nom DNS à votre VM**
 
 - avec Terraform, [suffit d'ajouter une propriété `domain_name_label` sur la ressource `azurerm_public_ip`](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip#domain_name_label-1)
+
 - go `terraform apply` après !
 
 ```

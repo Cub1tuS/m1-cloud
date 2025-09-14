@@ -8,10 +8,6 @@ On peut affecter un *NSG* à une interface réseau.
 
 En configurant ce *NSG*, on pourra alors faire du filtrage réseau, comme par exemple : n'autoriser les connexions que sur un certain port.
 
-???+ note
-
-    Pour rappel, on repart de ce que vous savez déployé avec le TP1.
-
 ## 2. Ajouter un NSG au déploiement
 
 🌞 **[Ajouter un NSG à votre déploiement Terraform](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group)**

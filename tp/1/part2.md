@@ -96,6 +96,7 @@ Sep 05 09:47:42 AZCLI-L001 systemd[1]: Finished Cloud-init: Network Stage.
 
 🌞 **Prouvez avec une connexion SSH sur l'IP publique que la VM est up**
 
+```
 dorian@Air-de-Dorian terraform % ssh dorian@98.71.167.185 
 The authenticity of host '98.71.167.185 (98.71.167.185)' can't be established.
 ED25519 key fingerprint is SHA256:/nHD96ArRIobfkyEklgr/c64xSZOPTgX4UsoWr5cCM0.
@@ -103,6 +104,7 @@ This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '98.71.167.185' (ED25519) to the list of known hosts.
 Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1089-azure x86_64)
+```
 
 ## 4. Exemple d'utilisation Azure + Terraform
 
