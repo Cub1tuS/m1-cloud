@@ -208,7 +208,23 @@ vm_public_ip = "172.201.193.39"
 - une commande `ssh` fonctionnelle vers le nom de domaine (pas l'IP)
 
 ```
+dorian@Air-de-Dorian terraform % ssh dorian@tfcloudtp1-vm.westeurope.cloudapp.azure.com
+The authenticity of host 'tfcloudtp1-vm.westeurope.cloudapp.azure.com (172.201.10.4)' can't be established.
+ED25519 key fingerprint is SHA256:aTQQqTH1vzxSSKcQ9nCjt1wdbEy5tyIZCU+8wcAYRyQ.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:282: 172.201.10.4
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'tfcloudtp1-vm.westeurope.cloudapp.azure.com' (ED25519) to the list of known hosts.
+Linux super-vm 5.10.0-35-cloud-amd64 #1 SMP Debian 5.10.237-1 (2025-05-19) x86_64
 
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sun Sep 14 21:58:45 2025 from 176.136.90.169
+dorian@super-vm:~$ 
 ```
 
 📁 **Fichiers attendus**
