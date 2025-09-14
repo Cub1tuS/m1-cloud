@@ -7,7 +7,7 @@
     
     variable "location" {
       type        = string
-      default     = "East US"
+      default     = "EastUS"
       description = "Azure region"
     }
     
