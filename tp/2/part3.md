@@ -85,17 +85,10 @@ vm_public_ip = "108.142.152.49"
 - utilisez `azcopy` pour écrire un fichier dans le *Storage Container* que vous avez créé
 - utilisez `azcopy` pour lire le fichier que vous venez de push
 
-???+ note
-
-    On peut facilement imaginer un service/script de backup qui tourne sur la VM.  
-    Il pourrait upload de façon sécurisé la backup résultante sur le Blob Storage de Azure.
-
 🌞 **Déterminez comment `azcopy login --identity` vous a authentifié**
 
 - une ptite short explication (t'façon c'est GPT qui va l'écrire non ?)
 - juste que vous sachiez un minimum comment fonctionne le machin, y'a du JWT derrière notamment
-
-![Didn't expect that](../../assets/img/meme_didnt_expect_that.png)
 
 🌞 **Requêtez un JWT d'authentification auprès du service que vous venez d'identifier, manuellement**
 
