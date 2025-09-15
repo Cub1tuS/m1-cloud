@@ -7,3 +7,4 @@ tp/terraform/.DS_Store
 tp/terraform/terraform.tfstate.backup
 tp/terraform/terraform.tfstate
 tp/terraform/.terraform.tfstate.lock.info
+tp/terraform/terraform.tfstate
