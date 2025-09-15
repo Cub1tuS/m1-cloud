@@ -179,3 +179,5 @@ dorian@super-vm:~$ curl 'http://169.254.169.254/metadata/identity/oauth2/token?a
 🌞 **Expliquez comment l'IP `169.254.169.254` peut être joignable**
 
 - C'est une IP présent dans la table de routage de la VM, l'IP est utilisé commme endpoint de métadonnées. (Service IMDS d'Azure dans ce cas)
+
+[Partie 4](part4.md)
