@@ -2,26 +2,36 @@
     
     variable "resource_group_name" {
       type        = string
-      description = "Name of the resource group"
+      description = "tf-cloud-tp1"
     }
     
     variable "location" {
       type        = string
-      default     = "EastUS"
+      default     = "WestEU"
       description = "Azure region"
     }
     
     variable "admin_username" {
       type        = string
-      description = "Admin username for the VM"
+      description = "dorian"
     }
     
     variable "public_key_path" {
       type        = string
-      description = "Path to your SSH public key"
+      description = "~/.ssh/cloud_tp1"
     }
     
     variable "subscription_id" {
       type        = string
-      description = "Azure subscription ID"
+      description = "2c1a3857-ab2c-454b-92f8-053d0a5b9f15"
+    }
+
+    variable "super_account" {
+      description = "cloud-storage"
+      type        = string
+    }
+
+    variable "super_container" {
+      description = "blob-storage"
+      type        = string
     }

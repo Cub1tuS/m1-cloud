@@ -20,51 +20,61 @@ Vous verrez qu'on peut **appliquer une politique d'accès et d'authentification*
 
 🌞 **Compléter votre plan Terraform pour déployer du Blob Storage pour votre VM**
 
-- je vous recommande de créer un nouveau fichier `storage.tf` à côté de votre `main.tf`
+[Fichier Storage](../terraform/storage.tf)
+
+```
+random_integer.suffix: Creating...
+random_integer.suffix: Creation complete after 0s [id=85118]
+azurerm_resource_group.main: Creating...
+azurerm_resource_group.main: Still creating... [00m10s elapsed]
+azurerm_resource_group.main: Creation complete after 10s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1]
+azurerm_virtual_network.main: Creating...
+azurerm_public_ip.main: Creating...
+azurerm_network_security_group.main: Creating...
+azurerm_storage_account.main: Creating...
+azurerm_network_security_group.main: Creation complete after 3s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Network/networkSecurityGroups/acceptanceTestSecurityGroup1]
+azurerm_public_ip.main: Creation complete after 5s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Network/publicIPAddresses/vmPublicIP]
+azurerm_virtual_network.main: Creation complete after 6s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Network/virtualNetworks/vm-vnet]
+azurerm_subnet.main: Creating...
+azurerm_storage_account.main: Still creating... [00m10s elapsed]
+azurerm_subnet.main: Creation complete after 7s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Network/virtualNetworks/vm-vnet/subnets/vm-subnet]
+azurerm_network_interface.main: Creating...
+azurerm_storage_account.main: Still creating... [00m20s elapsed]
+azurerm_network_interface.main: Still creating... [00m10s elapsed]
+azurerm_network_interface.main: Creation complete after 11s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Network/networkInterfaces/vm-nic]
+azurerm_network_interface_security_group_association.main: Creating...
+azurerm_linux_virtual_machine.main: Creating...
+azurerm_storage_account.main: Still creating... [00m30s elapsed]
+azurerm_network_interface_security_group_association.main: Still creating... [00m10s elapsed]
+azurerm_linux_virtual_machine.main: Still creating... [00m10s elapsed]
+azurerm_network_interface_security_group_association.main: Creation complete after 12s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Network/networkInterfaces/vm-nic|/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Network/networkSecurityGroups/acceptanceTestSecurityGroup1]
+azurerm_storage_account.main: Still creating... [00m40s elapsed]
+azurerm_linux_virtual_machine.main: Creation complete after 19s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Compute/virtualMachines/super-vm]
+data.azurerm_virtual_machine.main: Reading...
+data.azurerm_virtual_machine.main: Read complete after 0s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Compute/virtualMachines/super-vm]
+azurerm_storage_account.main: Still creating... [00m50s elapsed]
+azurerm_storage_account.main: Still creating... [01m00s elapsed]
+azurerm_storage_account.main: Creation complete after 1m9s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Storage/storageAccounts/lol16869861]
+azurerm_role_assignment.vm_blob_access: Creating...
+azurerm_storage_container.super_container: Creating...
+azurerm_storage_container.super_container: Creation complete after 1s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Storage/storageAccounts/lol16869861/blobServices/default/containers/mdr17171789717]
+azurerm_role_assignment.vm_blob_access: Still creating... [00m10s elapsed]
+azurerm_role_assignment.vm_blob_access: Still creating... [00m20s elapsed]
+azurerm_role_assignment.vm_blob_access: Creation complete after 27s [id=/subscriptions/2c1a3857-ab2c-454b-92f8-053d0a5b9f15/resourceGroups/tf-cloud-tp1/providers/Microsoft.Storage/storageAccounts/lol16869861/providers/Microsoft.Authorization/roleAssignments/6c5e041f-880f-a8a5-8307-8d43549bedc3]
+
+Apply complete! Resources: 12 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+vm_public_fqdn = "tfcloudtp1-vm.westeurope.cloudapp.azure.com"
+vm_public_ip = "108.142.152.49"
+```
 
 📁 **Fichiers attendus**
 
 - `main.tf`
 - `storage.tf`
 - tout autre fichier Terraform utilisé
-
-## Help : Exemple de fichier Terraform
-
-??? example
-
-    Un fichier qui fait une bonne partie du taf :
-    ```tf
-    # storage.tf
-    
-    resource "azurerm_storage_account" "main" {
-      name                     = var.storage_account_name
-      resource_group_name      = azurerm_resource_group.main.name
-      location                 = azurerm_resource_group.main.location
-      account_tier             = "Standard"
-      account_replication_type = "LRS"
-    }
-    
-    resource "azurerm_storage_container" "meowcontainer" {
-      name                  = var.storage_container_name
-      storage_account_id = azurerm_storage_account.main.id
-      container_access_type = "private"
-    }
-    
-    data "azurerm_virtual_machine" "main" {
-      name                = azurerm_linux_virtual_machine.main.name
-      resource_group_name = azurerm_resource_group.main.name
-    }
-    
-    resource "azurerm_role_assignment" "vm_blob_access" {
-      principal_id = data.azurerm_virtual_machine.main.identity[0].principal_id
-      role_definition_name = "Storage Blob Data Contributor"
-      scope                = azurerm_storage_account.main.id
-    
-      depends_on = [
-        azurerm_linux_virtual_machine.main
-      ]
-    }
-    ```
 
 ## 3. Proooooooofs
 

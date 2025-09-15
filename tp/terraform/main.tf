@@ -56,4 +56,8 @@ resource "azurerm_linux_virtual_machine" "main" {
     sku       = "11"
     version   = "latest"
   }
+
+  identity {
+    type = "SystemAssigned"
+  }
 }
