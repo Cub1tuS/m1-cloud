@@ -26,15 +26,15 @@
       description = "2c1a3857-ab2c-454b-92f8-053d0a5b9f15"
     }
 
-    variable "super_account" {
-      type        = string
-      description = "lolO86986"
-    }
+    #variable "super_account" {
+     # type        = string
+     # description = "lolO86986"
+    #}
 
-    variable "super_container" {
-      type        = string
-      description = "mdr98667"
-    }
+#    variable "super_container" {
+ #     type        = string
+  #    description = "mdr98667"
+   # }
 
     variable "alert_email_address" {
       type	  = string
