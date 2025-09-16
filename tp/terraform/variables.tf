@@ -27,11 +27,16 @@
     }
 
     variable "super_account" {
-      description = "cloud-storage"
       type        = string
+      description = "lolO86986"
     }
 
     variable "super_container" {
-      description = "blob-storage"
       type        = string
+      description = "mdr98667"
+    }
+
+    variable "alert_email_address" {
+      type	  = string
+      description = "dorian.claverie@efrei.net"
     }
