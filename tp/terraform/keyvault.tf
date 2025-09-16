@@ -1,9 +1,7 @@
 # keyvault.tf
 
-# Récupère les infos du client Azure
 data "azurerm_client_config" "current" {}
 
-# Génère une valeur secrète aléatoire
 resource "random_password" "example" {
   length  = 32
   upper   = true
@@ -12,7 +10,6 @@ resource "random_password" "example" {
   special = true
 }
 
-# Création du Key Vault
 resource "azurerm_key_vault" "main" {
   name                        = "kv-${var.resource_group_name}"
   location                    = azurerm_resource_group.main.location
@@ -34,7 +31,6 @@ resource "azurerm_key_vault" "main" {
   }
 }
 
-# Stocke le secret aléatoire dans le Key Vault
 resource "azurerm_key_vault_secret" "example" {
   name         = "example-secret"
   value        = random_password.example.result

@@ -36,7 +36,7 @@ resource "azurerm_monitor_metric_alert" "cpu_alert" {
   }
 }
 
-# Memory Metric Alert (requires Azure Monitor Agent installed on the VM)
+# Memory Metric Alert
 resource "azurerm_monitor_metric_alert" "memory_alert" {
   name                = "memory-alert-${azurerm_linux_virtual_machine.main.name}"
   resource_group_name = azurerm_resource_group.main.name

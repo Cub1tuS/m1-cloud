@@ -114,7 +114,7 @@ Parce que jui pas ~~trop~~ un animal, j'vous file un bon pattern de fichiers Ter
 
 ### A. Création de fichiers
 
-[Liste des fichiers](./files/)
+[Liste des fichiers](../terraform/)
 
 ### B. Commandes Terraform
 
