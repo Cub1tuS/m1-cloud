@@ -54,3 +54,5 @@ dorian@Air-de-Dorian terraform % az monitor activity-log list \
   --status Failed \
   --output table
 ```
+
+[Partie 5](part5.md)

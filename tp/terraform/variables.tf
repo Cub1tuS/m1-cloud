@@ -28,15 +28,15 @@
 
     #variable "super_account" {
      # type        = string
-     # description = "lolO86986"
+     # description = "Nom du storage account"
     #}
 
 #    variable "super_container" {
  #     type        = string
-  #    description = "mdr98667"
+  #    description = "Nom du blob"
    # }
 
     variable "alert_email_address" {
       type	  = string
-      description = "dorian.claverie@efrei.net"
+      description = "Mail qui reçoit les alertes"
     }
